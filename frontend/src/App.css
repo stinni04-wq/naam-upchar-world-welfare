@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Cinzel+Decorative:wght@400;700;900&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  --saffron: #FF6B00;
+  --deep-saffron: #E55A00;
+  --gold: #FFB300;
+  --light-gold: #FFD54F;
+  --cream: #FFF8E7;
+  --deep-cream: #FFF3D0;
+  --maroon: #8B1A1A;
+  --deep-maroon: #5C0F0F;
+  --green: #2E7D32;
+  --white: #FFFFFF;
+  --text-dark: #2C1810;
+  --text-mid: #5D3A1A;
+  --text-light: #8B6040;
+  --shadow-warm: 0 8px 32px rgba(255, 107, 0, 0.15);
+  --shadow-deep: 0 16px 48px rgba(139, 26, 26, 0.2);
+  --border-gold: 1px solid rgba(255, 179, 0, 0.4);
+  --gradient-saffron: linear-gradient(135deg, #FF6B00 0%, #FFB300 100%);
+  --gradient-bg: linear-gradient(180deg, #FFF8E7 0%, #FFF3D0 50%, #FFE9B0 100%);
+  --font-display: 'Cinzel Decorative', serif;
+  --font-body: 'Lato', sans-serif;
+  --font-sanskrit: 'Tiro Devanagari Sanskrit', serif;
+  --radius: 16px;
+  --radius-sm: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--gradient-bg);
+  min-height: 100vh;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* Animated mandala background */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(255, 179, 0, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(255, 107, 0, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(139, 26, 26, 0.04) 0%, transparent 70%);
+  z-index: -1;
+  animation: bgPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes bgPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 3px; }
+
+/* Utility */
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Button styles */
+.btn-primary {
+  background: var(--gradient-saffron);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  padding: 16px 32px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(255, 107, 0, 0.4);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+}
+
+.btn-primary:hover::after { width: 300px; height: 300px; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255, 107, 0, 0.5); }
+.btn-primary:active { transform: translateY(0); }
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--saffron);
+  border: 2px solid var(--saffron);
+  border-radius: var(--radius);
+  padding: 14px 32px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+.btn-secondary:hover { background: rgba(255, 107, 0, 0.08); }
+
+/* Input styles */
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-mid);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid rgba(255, 179, 0, 0.3);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-dark);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: var(--saffron);
+  box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.1);
+  background: white;
+}
+
+.input-group input::placeholder { color: #C5A882; }
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border: var(--border-gold);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-warm);
+  backdrop-filter: blur(10px);
+}
+
+/* Error/Success messages */
+.message {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.message.error { background: #FFEBEE; color: #C62828; border: 1px solid #EF9A9A; }
+.message.success { background: #E8F5E9; color: #2E7D32; border: 1px solid #A5D6A7; }
+
+/* Om symbol decoration */
+.om-decoration {
+  font-family: var(--font-sanskrit);
+  color: var(--gold);
+  opacity: 0.6;
+  user-select: none;
+}
