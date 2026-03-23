@@ -125,7 +125,7 @@ const LandingPage = () => {
               <div className="input-group">
                 <label>Mobile Number</label>
                 <input name="mobile" value={form.mobile} onChange={handleFormChange}
-                  placeholder="+91 98765 43210" type="tel" />
+                  placeholder="Phone Number" type="tel" />
               </div>
 
               <button type="submit" className="btn-primary" disabled={loading}>
@@ -174,7 +174,7 @@ const LandingPage = () => {
                 <input
                   value={loginMobile}
                   onChange={(e) => { setLoginMobile(e.target.value); setMessage(null); }}
-                  placeholder="+91 98765 43210"
+                  placeholder="Phone Number"
                   type="tel"
                 />
               </div>
