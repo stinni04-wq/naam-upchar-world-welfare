@@ -170,6 +170,21 @@ const Dashboard = () => {
           )}
         </div>
 
+        {/* Google Meet - Chant Online */}
+        <a
+          href="https://meet.google.com/mkw-ozqu-mxk"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="meet-dashboard-btn"
+        >
+          <span className="meet-icon">🕉️</span>
+          <div className="meet-text">
+            <span className="meet-title">Chant Online & Attend Classes</span>
+            <span className="meet-subtitle">Join other devotees live</span>
+          </div>
+          <span className="meet-arrow">→</span>
+        </a>
+
         {/* WhatsApp Group */}
         <a
           href="https://chat.whatsapp.com/IXoGr09bpUmG6FJBOYkzdA?mode=gi_t"

@@ -396,6 +396,53 @@
   color: #2C1810;
 }
 
+/* Google Meet chanting button */
+.meet-dashboard-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, #1a73e8, #0d47a1);
+  color: white;
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(26, 115, 232, 0.35);
+  transition: all 0.3s;
+}
+.meet-dashboard-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 24px rgba(26, 115, 232, 0.45);
+}
+
+.meet-icon { font-size: 28px; flex-shrink: 0; }
+
+.meet-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.meet-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.meet-subtitle {
+  font-size: 12px;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.meet-arrow {
+  font-size: 18px;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
 /* WhatsApp group button on dashboard */
 .whatsapp-dashboard-btn {
   display: flex;
